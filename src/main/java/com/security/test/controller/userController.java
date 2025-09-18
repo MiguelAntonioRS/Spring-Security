@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("s1")
 public class userController {
 
-    @GetMapping("/index")
-    public String index() {
+    @GetMapping("/secure")
+    public String secure() {
         return "endPoint secured";
+    }
+
+    @GetMapping("/notsecure")
+    public String notSecure() {
+        return "endPoint notSecured";
     }
 }
