@@ -13,7 +13,7 @@ public class userController {
         return "endPoint secured";
     }
 
-    @GetMapping("/notsecure")
+    @GetMapping("/notSecured")
     public String notSecure() {
         return "endPoint notSecured";
     }
