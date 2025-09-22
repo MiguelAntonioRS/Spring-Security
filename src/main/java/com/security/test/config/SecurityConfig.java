@@ -21,7 +21,7 @@ public class SecurityConfig {
                 .build();*/
 
         return httpSecurity
-                .authorizeHttpRequests(authz -> authz
+                .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/s1/notSecured").permitAll()
                         .anyRequest().authenticated()
                 )
