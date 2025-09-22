@@ -31,10 +31,4 @@ public class SecurityConfig {
                 .logout(Customizer.withDefaults())
                 .build();
     }
-
-    public AuthenticationSuccessHandler successHandler() {
-        return ((request, response, authentication) -> {
-            response.sendRedirect("/s1/notSecured");
-        });
-    }
 }
