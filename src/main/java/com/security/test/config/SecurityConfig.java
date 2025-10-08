@@ -1,18 +1,15 @@
 package com.security.test.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
 @EnableWebFluxSecurity
+@EnableMethodSecurity
 public class SecurityConfig {
 
-    @Bean
+    /*@Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         /*return httpSecurity
                 .authorizeHttpRequests()
@@ -20,7 +17,7 @@ public class SecurityConfig {
                     .permitAll()
                     .anyRequest().authenticated()
                 .and()
-                .build();*/
+                .build();
 
         return httpSecurity
                 .authorizeHttpRequests(auth -> auth
@@ -30,5 +27,5 @@ public class SecurityConfig {
                 .formLogin(Customizer.withDefaults())
                 .logout(Customizer.withDefaults())
                 .build();
-    }
+    }*/
 }
