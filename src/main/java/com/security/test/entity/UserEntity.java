@@ -1,4 +1,4 @@
 package com.security.test.entity;
 
-public class userEntity {
+public class UserEntity {
 }
