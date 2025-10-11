@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("s1")
-public class userController {
+public class UserController {
 
     @GetMapping("/secure")
     public String secure() {
