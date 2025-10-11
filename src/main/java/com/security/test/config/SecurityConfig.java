@@ -40,6 +40,7 @@ public class SecurityConfig {
                 .build();
     }*/
 
+    @Bean
     public AuthenticationManager authenticationManager() {
 
     }
