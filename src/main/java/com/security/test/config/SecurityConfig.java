@@ -15,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -73,6 +74,8 @@ public class SecurityConfig {
                 .roles("ADMIN")
                 .authorities("READ", "CREATE")
                 .build();
+
+        return new InMemoryUserDetailsManager();
     }
 
     @Bean
