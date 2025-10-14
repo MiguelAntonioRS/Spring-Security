@@ -64,6 +64,7 @@ public class SecurityConfig {
         return provider;
     }
 
+    @Bean
     public UserDetailsService userDetailsService() {
 
     }
