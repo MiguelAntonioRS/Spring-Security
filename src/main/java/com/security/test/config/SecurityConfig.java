@@ -75,7 +75,7 @@ public class SecurityConfig {
                 .authorities("READ", "CREATE")
                 .build();
 
-        return new InMemoryUserDetailsManager();
+        return new InMemoryUserDetailsManager(userDetails);
     }
 
     @Bean
