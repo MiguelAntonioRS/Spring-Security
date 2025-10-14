@@ -69,6 +69,10 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails userDetails = User.withUsername("Miguel")
+                .password("0927")
+                .roles("ADMIN")
+                .authorities("READ", "CREATE")
+                .build();
     }
 
     @Bean
