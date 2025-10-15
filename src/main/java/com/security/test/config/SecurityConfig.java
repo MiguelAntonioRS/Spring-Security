@@ -74,7 +74,12 @@ public class SecurityConfig {
     public UserDetailsService userDetailsService() {
         List<UserDetails> userDetailsList = new ArrayList<>();
 
-        userDetailsList.add()
+        userDetailsList.add(User.withUsername("Miguel")
+                .password("0927")
+                .roles("ADMIN")
+                .authorities("READ", "CREATE")
+                .build());
+
         return new InMemoryUserDetailsManager(userDetails);
     }
 
