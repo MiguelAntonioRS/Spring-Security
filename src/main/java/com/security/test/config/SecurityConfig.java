@@ -80,7 +80,11 @@ public class SecurityConfig {
                 .authorities("READ", "CREATE")
                 .build());
 
-        userDetailsList.add()
+        userDetailsList.add(User.withUsername("Tania")
+                .password("1234")
+                .roles("USER")
+                .authorities("READ", "CREATE")
+                .build());
 
         return new InMemoryUserDetailsManager(userDetailsList);
     }
