@@ -72,7 +72,7 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        List<UserDetails> userDetails = new ArrayList<>();
+        List<UserDetails> userDetailsList = new ArrayList<>();
 
 
         return new InMemoryUserDetailsManager(userDetails);
