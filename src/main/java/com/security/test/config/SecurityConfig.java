@@ -80,7 +80,7 @@ public class SecurityConfig {
                 .authorities("READ", "CREATE")
                 .build());
 
-        return new InMemoryUserDetailsManager(userDetails);
+        return new InMemoryUserDetailsManager(userDetailsList);
     }
 
     @Bean
