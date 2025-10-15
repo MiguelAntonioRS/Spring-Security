@@ -80,6 +80,8 @@ public class SecurityConfig {
                 .authorities("READ", "CREATE")
                 .build());
 
+        userDetailsList.add()
+
         return new InMemoryUserDetailsManager(userDetailsList);
     }
 
