@@ -74,7 +74,7 @@ public class SecurityConfig {
     public UserDetailsService userDetailsService() {
         List<UserDetails> userDetailsList = new ArrayList<>();
 
-
+        userDetailsList.add()
         return new InMemoryUserDetailsManager(userDetails);
     }
 
