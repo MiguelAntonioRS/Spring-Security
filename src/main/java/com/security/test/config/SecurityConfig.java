@@ -18,6 +18,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -69,11 +72,7 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails userDetails = User.withUsername("Miguel")
-                .password("0927")
-                .roles("ADMIN")
-                .authorities("READ", "CREATE")
-                .build();
+        List<UserDetails> userDetails = new ArrayList<>();
 
         return new InMemoryUserDetailsManager(userDetails);
     }
