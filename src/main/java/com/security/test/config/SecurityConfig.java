@@ -32,7 +32,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 
-        return httpSecurity.build();
+        return httpSecurity
+                .csrf(csrf -> csrf.disable())
+                .build();
     }
 
 
