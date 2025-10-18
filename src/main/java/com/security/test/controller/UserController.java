@@ -18,4 +18,5 @@ public class UserController {
     public String notSecure() {
         return "endPoint notSecured";
     }
+
 }
