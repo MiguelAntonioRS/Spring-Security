@@ -39,6 +39,7 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(http -> {
                     http.requestMatchers(HttpMethod.GET, "/auth/notSecured").permitAll();
+                    http.requestMatchers(HttpMethod.GET, "/auth/secured").hasAuthority("READ");
                 })
                 .build();
     }
