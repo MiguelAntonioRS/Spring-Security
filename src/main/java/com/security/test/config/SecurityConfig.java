@@ -40,6 +40,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(http -> {
                     http.requestMatchers(HttpMethod.GET, "/auth/notSecured").permitAll();
                     http.requestMatchers(HttpMethod.GET, "/auth/secured").hasAuthority("READ");
+
                 })
                 .build();
     }
