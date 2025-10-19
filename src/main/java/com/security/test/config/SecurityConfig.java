@@ -41,6 +41,7 @@ public class SecurityConfig {
                     http.requestMatchers(HttpMethod.GET, "/auth/notSecured").permitAll();
                     http.requestMatchers(HttpMethod.GET, "/auth/secured").hasAuthority("READ");
 
+                    http.anyRequest().denyAll();
                 })
                 .build();
     }
