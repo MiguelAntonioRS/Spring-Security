@@ -48,27 +48,6 @@ public class SecurityConfig {
                 .build();
     }
 
-
-    /*@Bean
-    public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-        /*return httpSecurity
-                .authorizeHttpRequests()
-                .a("/s1/notSecured")
-                    .permitAll()
-                    .anyRequest().authenticated()
-                .and()
-                .build();
-
-        return httpSecurity
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/s1/notSecured").permitAll()
-                        .anyRequest().authenticated()
-                )
-                .formLogin(Customizer.withDefaults())
-                .logout(Customizer.withDefaults())
-                .build();
-    }*/
-
     @Bean
     public AuthenticationManager authenticationManager() throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
