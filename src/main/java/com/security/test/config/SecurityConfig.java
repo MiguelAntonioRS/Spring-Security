@@ -46,7 +46,11 @@ public class SecurityConfig {
                     http.requestMatchers(HttpMethod.GET, "/auth/secure").hasAuthority("CREATE");
 
                     // Configurar el resto de los endpoints
+                    // No permite que ningun endpoint entre (autenticado o no)
                     http.anyRequest().denyAll();
+
+                    // Si se autentica puede entrar cualquier endpoint
+                    //http.anyRequest().authenticated();
                 })
                 .build();
     }
