@@ -39,9 +39,13 @@ public class SecurityConfig {
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(http -> {
+                    // Configurar los endpoints publicos
                     http.requestMatchers(HttpMethod.GET, "/auth/notSecured").permitAll();
+
+                    // Configurar los endpoints privados
                     http.requestMatchers(HttpMethod.GET, "/auth/secure").hasAuthority("CREATE");
 
+                    // Configurar el resto de los endpoints
                     http.anyRequest().denyAll();
                 })
                 .build();
