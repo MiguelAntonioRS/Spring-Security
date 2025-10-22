@@ -12,6 +12,7 @@ public class UserController {
 
 
     @GetMapping("/secure")
+    @PreAuthorize("hasAuthority('READ')")
     public String secure() {
         return "endPoint secured";
     }
