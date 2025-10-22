@@ -55,7 +55,29 @@ public class SecurityConfig {
                 .build();
     }*/
 
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 
+        return httpSecurity
+                .csrf(csrf -> csrf.disable())
+                .httpBasic(Customizer.withDefaults())
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(http -> {
+                    // Configurar los endpoints publicos
+                    http.requestMatchers(HttpMethod.GET, "/auth/notSecured").permitAll();
+
+                    // Configurar los endpoints privados
+                    http.requestMatchers(HttpMethod.GET, "/auth/secure").hasAuthority("CREATE");
+
+                    // Configurar el resto de los endpoints
+                    // No permite que ningun endpoint entre (autenticado o no)
+                    http.anyRequest().denyAll();
+
+                    // Si se autentica puede entrar cualquier endpoint
+                    //http.anyRequest().authenticated();
+                })
+                .build();
+    }
 
     @Bean
     public AuthenticationManager authenticationManager() throws Exception {
