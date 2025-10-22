@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 @PreAuthorize("denyAll()")
 public class UserController {
 
-
     @GetMapping("/secure")
     @PreAuthorize("hasAuthority('READ')")
     public String secure() {
