@@ -17,6 +17,7 @@ public class UserController {
     }
 
     @GetMapping("/notSecured")
+    @PreAuthorize("permitAll()")
     public String notSecure() {
         return "endPoint notSecured";
     }
