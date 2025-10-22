@@ -14,12 +14,16 @@ public class UserController {
     @GetMapping("/secure")
     @PreAuthorize("hasAuthority('READ')")
     public String secure() {
-        return "endPoint secured";
+        return "EndPoint secured";
     }
 
     @GetMapping("/notSecured")
     @PreAuthorize("permitAll()")
     public String notSecure() {
-        return "endPoint notSecured";
+        return "EndPoint notSecured";
+    }
+
+    public String secureTest() {
+        return "Endpoint Test";
     }
 }
