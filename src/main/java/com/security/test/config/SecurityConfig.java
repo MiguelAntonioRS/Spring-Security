@@ -31,7 +31,7 @@ public class SecurityConfig {
     @Autowired
     AuthenticationConfiguration authenticationConfiguration;
 
-    @Bean
+    /*@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 
         return httpSecurity
@@ -53,7 +53,9 @@ public class SecurityConfig {
                     //http.anyRequest().authenticated();
                 })
                 .build();
-    }
+    }*/
+
+
 
     @Bean
     public AuthenticationManager authenticationManager() throws Exception {
