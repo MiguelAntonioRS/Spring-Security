@@ -1,7 +1,6 @@
 package com.security.test.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @AllArgsConstructor
@@ -13,6 +12,8 @@ import lombok.*;
 @Table(name = "users")
 public class RolesEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private RoleEnum roleEnum;
