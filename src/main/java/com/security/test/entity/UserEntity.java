@@ -1,7 +1,6 @@
 package com.security.test.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @AllArgsConstructor
@@ -12,4 +11,8 @@ import lombok.*;
 @Entity
 @Table(name = "users")
 public class UserEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 }
