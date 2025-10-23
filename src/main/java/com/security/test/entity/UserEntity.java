@@ -17,6 +17,10 @@ public class UserEntity {
     private Long id;
 
     private String userName;
-
     private String password;
+
+    private boolean isEnabled;
+    private boolean accountNoExpired;
+    private boolean accountNoLocked;
+    private boolean credentialNoExpired;
 }
